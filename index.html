@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BLISSWHIP | Phuc Thanh Group</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height:1.6;
+  background-image:url("https://cdn.bitrix24.com/b28854747/landing/bb2/bb2dbb17d881c781cb6080e3e498799c/sky5_1x.png");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  min-height:100vh;
+  overflow-x:hidden;
+  overflow-y:visible;
+}
+
+.container{max-width:1200px;margin:auto;width:100%}
+a{text-decoration:none}
+
+header{
+  height:130px;
+  background-image:url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
+  background-size:cover;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+}
+
+.header-content{display:flex;justify-content:space-between;align-items:center}
+.logo img{height:132px;width:230px}
+nav ul{list-style:none;display:flex;gap:24px;font-size:20px}
+nav ul li a{color:lightgreen;font-weight:600}
+
+#hero{
+  height:15vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.35);
+  margin-top:130px;
+}
+.hero-content{font-size:44px;color:lightgreen;font-weight:bold}
+
+.section{padding:80px 0;width:100%}
+
+/* ================= TWO COLUMN INTRO ================= */
+.intro-wrapper{
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.intro-text h1{
+  font-size:42px;
+  color:lightgreen;
+  margin-bottom:18px;
+  font-weight:800;
+}
+
+.intro-text h3{
+  color:sienna;
+  margin-bottom:24px;
+}
+
+.intro-text p{
+  font-size:18px;
+  line-height:1.9;
+  color:#f2f2f2;
+}
+
+.intro-image{
+  display:flex;
+  justify-content:center;
+}
+
+.intro-image img{
+  width:100%;
+  max-width:520px;
+  border-radius:26px;
+  padding:28px;
+  background:lightskyblue;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+
+/* ================= SLIDER ================= */
+.slider-wrapper{position:relative;max-width:1400px;margin:auto}
+.slider{overflow:hidden}
+.slides{display:flex;transition:transform .5s ease}
+.slide{min-width:100%;display:flex;justify-content:center;align-items:center}
+
+.slide img{
+  width:600px;
+  height:680px;
+  object-fit:contain;
+  background:lightskyblue;
+  border-radius:22px;
+  padding:32px;
+  box-shadow:0 14px 34px rgba(0,0,0,.28);
+}
+
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:#ffffffcc;
+  border:none;
+  font-size:34px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  cursor:pointer;
+}
+.prev{left:-70px}
+.next{right:-70px}
+
+.amazon-btn{
+  display:inline-block;
+  margin-top:40px;
+  padding:18px 48px;
+  background:#FF9900;
+  color:#fff;
+  font-weight:bold;
+  border-radius:40px;
+  font-size:20px;
+  margin-top:0;
+
+}
+
+footer{text-align:center;padding:20px 0;color:#ff6f00;font-weight:bold}
+
+/* MOBILE */
+@media(max-width:900px){
+  .intro-wrapper{grid-template-columns:1fr;gap:40px;text-align:center}
+  .slide img{width:90vw;height:90vw}
+  .prev{left:0}
+  .next{right:0}
+}
+
+.buy-wrapper{
+   display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;            /* khoảng cách chỉ 5px */
+  margin-top:20px;
+}
+
+/* căn giữa Shopify button */
+#product-component-1770046440480{
+  display:flex;
+  justify-content:center;
+   margin-bottom:0;
+}
+
+/* phóng to + đẹp hơn (tuỳ chọn) */
+.shopify-buy__btn{
+  font-size:20px !important;
+  padding:16px 42px !important;
+  border-radius:40px !important;
+}
+
+body{
+  overflow-x:hidden;
+}
+::-webkit-scrollbar:vertical{
+  display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/8ce/8ce3f828f3a0b0daf0cd7031c2e8b22d/chatgpt_image_jan_13_2026_04_49_31_pm_1x.png">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage">Back to Homepage</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-content">PRODUCT CATALOG</div>
+</section>
+
+<div class="buy-wrapper">
+<div id='product-component-1770046440480'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'sjenn0-1w.myshopify.com',
+      storefrontAccessToken: 'f79225230001a623c7dc8394cd1c2ac5',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '10223840657725',
+        node: document.getElementById('product-component-1770046440480'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "button": {
+        "border-radius": "9px"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "button": false,
+      "buttonWithQuantity": true
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "border-radius": "9px"
+      }
+    },
+    "text": {
+      "button": "Add to cart"
+    }
+  },
+  "option": {},
+  "cart": {
+    "styles": {
+      "button": {
+        "border-radius": "9px"
+      }
+    },
+    "text": {
+      "total": "Subtotal",
+      "button": "Checkout"
+    }
+  },
+  "toggle": {}
+},
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+
+
+
+<!-- ================= TWO COLUMN INTRO SECTION ================= -->
+<section class="section">
+  <div class="container intro-wrapper">
+
+    <div class="intro-text">
+      <h1 style="color: purple">SAFE N2O CREAM CHARGERS</h1>
+      <h3>Our PURE ORIGIN cream chargers</h3>
+      <p style="color: green; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+        The 720g steel N₂O cream charger cylinder is an ideal solution for cafés, bakeries, and professional kitchens seeking performance, reliability, and efficiency. Constructed from high-grade steel, the cylinder offers exceptional durability and superior pressure resistance, ensuring safe operation and stable gas storage over extended periods. Its large 720g capacity delivers higher output, producing consistently smooth, fluffy whipped cream while reducing the need for frequent replacements and improving workflow productivity. With a robust design, user-friendly handling, and compliance with strict quality standards, this charger provides a modern, professional, and dependable choice for all culinary and beverage applications.
+      </p>
+    </div>
+
+    <div class="intro-image">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/eeb/eeb4d65f67cc253341efc5ce59178578/cylinder_1x.png" alt="Cream Charger">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= TPED SECTION (IMAGE LEFT) ================= -->
+<section class="section">
+  <div class="container intro-wrapper" style="grid-template-columns: 1fr 1.1fr;">
+
+    <div class="intro-image">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/7ee/7ee678f2d5a1384261baa40ee259e7c7/screenshot_2026_01_30_at_10_19_42_am_1x.png" alt="TPED Compliance">
+    </div>
+
+    <div class="intro-text">
+      <h1 style="color: purple">TPED STANDARD</h1>
+      <h3>European Standard Compliance</h3>
+      <p style="color: green; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+        The product complies with TPED (Transportable Pressure Equipment Directive – EU) standards and undergoes rigorous testing for pressure, tightness, and structural durability. Designed for maximum safety and reliability, each cylinder is manufactured under strict quality control procedures to ensure consistent performance during transportation, storage, and daily professional use. This certification guarantees peace of mind for cafés, bakeries, and commercial kitchens that demand dependable, high‑pressure gas solutions.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container intro-wrapper">
+
+    <div class="intro-text">
+      <h1 style="color: purple">DOT VALVE</h1>
+      <h3>DOT Standard</h3>
+      <p style="color: green; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+         The DOT valve is specifically engineered for 720g N₂O cream charger cylinders, complying with DOT (Department of Transportation) safety standards to ensure maximum reliability, leak-proof sealing, and stable performance under high-pressure conditions. Designed with reinforced steel construction and high-quality sealing components, the valve effectively prevents gas leakage while maintaining consistent internal pressure to preserve the purity and quality of the nitrous oxide.
+      </p>
+    </div>
+
+    <div class="intro-image">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/4fe/4fea902c047c23c7926c254ed8846505/screenshot_2026_01_30_at_10_35_16_am_1x.png" alt="Cream Charger">
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container intro-wrapper" style="grid-template-columns: 1fr 1.1fr;">
+   
+</section>
+
+<!-- ================= SLIDER ================= -->
+<section class="section">
+  <div class="container" style="text-align:center">
+
+    <div class="slider-wrapper">
+      <button class="arrow prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+
+      <div class="slider">
+        <div class="slides" id="slides">
+          <div class="slide"><img src="https://cdn.bitrix24.com/b28854747/landing/eeb/eeb4d65f67cc253341efc5ce59178578/cylinder_1x.png"></div>
+          <div class="slide"><img src="https://cdn.bitrix24.com/b28854747/landing/225/2257d2a7e29c5b65d286783f74357321/screenshot_2026_01_29_at_5_14_20_pm_1x.png"></div>
+        </div>
+      </div>
+
+      <button class="arrow next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <a href="https://www.amazon.com/your-link" target="_blank" class="amazon-btn">🛒 Buy on Amazon</a>
+
+  </div>
+</section>
+</div>
+
+
+<footer>
+  © <span id="year"></span> BLISSWHIP
+  <p style="font-size:13px;color:#666">
+    As an Amazon Associate, we earn from qualifying purchases.
+  </p>
+</footer>
+
+
+<script>
+let current = 0;
+const slides = document.getElementById('slides');
+const total = slides.children.length;
+function updateSlide(){slides.style.transform=`translateX(-${current*100}%)`;}
+function nextSlide(){current=(current+1)%total;updateSlide();}
+function prevSlide(){current=(current-1+total)%total;updateSlide();}
+setInterval(nextSlide,4000);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
